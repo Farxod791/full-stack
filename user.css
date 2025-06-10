@@ -1,0 +1,233 @@
+/* Reset Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  display: flex;
+  min-height: 100vh; /* To'liq ekran balandligi */
+  background: linear-gradient(135deg, #f0f4ff 0%, #e0e7ff 100%); /* Nozik gradient fon */
+  color: #1f2a44;
+  overflow-y: auto; /* Scroll imkoniyati */
+}
+
+/* Dashboard */
+.dashboard {
+  display: flex;
+  width: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 260px; /* Biroz kengroq sidebar */
+  background: linear-gradient(180deg, #1f2a44 0%, #2d3748 100%); /* Gradient fon */
+  color: #ffffff;
+  padding: 1.5rem;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  height: 100vh; /* Sidebar to'liq balandlikda */
+  overflow-y: auto; /* Sidebar ichida scroll */
+  transition: width 0.3s ease;
+}
+
+.sidebar h2 {
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  margin-bottom: 1.25rem;
+}
+
+.sidebar .menu-btn,
+#logoutBtn {
+  width: 100%;
+  padding: 0.75rem;
+  background: #4b5563; /* Yumshoq kulrang fon */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.sidebar .menu-btn:hover,
+#logoutBtn:hover {
+  background: linear-gradient(90deg, #3b82f6 0%, #60a5fa 100%); /* Ko'k gradient */
+  transform: translateX(5px); /* Nozik siljish effekti */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Content */
+.content {
+  flex: 1;
+  padding: 2.5rem;
+  background: #ffffff; /* Toza oq fon */
+  min-height: 100vh;
+}
+
+/* Section */
+.section {
+  display: block;
+  animation: slideUp 0.5s ease; /* Silliq kirish animatsiyasi */
+}
+
+/* Form */
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px; /* Forma kengligini cheklash */
+  margin: 0 auto; /* Markazlashtirish */
+}
+
+form label {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #1f2a44;
+  font-size: 0.95rem;
+}
+
+form input,
+form textarea {
+  padding: 0.85rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background: #f8fafc;
+  transition: all 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.2);
+  outline: none;
+}
+
+form button {
+  margin-top: 1.5rem;
+  padding: 0.9rem;
+  background: linear-gradient(90deg, #3b82f6 0%, #60a5fa 100%); /* Ko'k gradient */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+form button:hover {
+  background: linear-gradient(90deg, #2563eb 0%, #3b82f6 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Elements */
+#elements {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #f8fafc;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+#elements:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+#elements p {
+  margin: 0;
+  flex: 1;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #4b5568;
+}
+
+/* Animations */
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 1rem;
+  }
+
+  .sidebar h2 {
+    font-size: 1.5rem;
+  }
+
+  .content {
+    padding: 1.5rem;
+  }
+
+  form {
+    max-width: 100%;
+  }
+
+  #elements {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  #elements p {
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    padding: 0.75rem;
+  }
+
+  .sidebar .menu-btn,
+  #logoutBtn {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  .content {
+    padding: 1rem;
+  }
+
+  form input,
+  form textarea {
+    padding: 0.75rem;
+  }
+
+  form button {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+}

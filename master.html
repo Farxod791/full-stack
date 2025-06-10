@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Master Dashboard</title>
+  <link rel="stylesheet" href="./master.css" />
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <h2>Dern-Support - Master</h2>
+      <ul>
+        <li><button class="menu-btn" data-section="requests">Pending Requests</button></li>
+        <li><button id="logoutBtn">Logout</button></li>
+      </ul>
+    </aside>
+
+    <main class="content">
+      <section id="requests" class="section">
+        <h2>Pending Requests</h2>
+        <div id="requestList">Loading...</div>
+      </section>
+    </main>
+  </div>
+
+  <script src="./master.js"></script>
+</body>
+</html>

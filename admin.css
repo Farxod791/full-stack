@@ -1,0 +1,236 @@
+/* Reset Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #f0f4ff 0%, #e0e7ff 100%); /* Nozik gradient fon */
+  color: #1f2a44;
+  min-height: 100vh; /* To'liq ekran balandligi */
+  overflow-y: auto; /* Scroll imkoniyati */
+}
+
+/* Dashboard */
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 280px; /* Biroz kengroq sidebar */
+  background: linear-gradient(180deg, #1f2a44 0%, #2d3748 100%); /* Gradient fon */
+  color: #ffffff;
+  padding: 1.5rem;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  height: 100vh; /* Sidebar to'liq balandlikda */
+  overflow-y: auto; /* Sidebar ichida scroll */
+  transition: width 0.3s ease;
+}
+
+.sidebar h2 {
+  margin: 0 0 1.5rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 0.75rem;
+}
+
+.sidebar ul li button {
+  width: 100%;
+  padding: 0.75rem;
+  background: #4b5563; /* Yumshoq kulrang fon */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.sidebar ul li button:hover {
+  background: linear-gradient(90deg, #3b82f6 0%, #60a5fa 100%); /* Ko'k gradient */
+  transform: translateX(5px); /* Nozik siljish effekti */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Content */
+.content {
+  flex: 1;
+  padding: 2rem;
+  background: #ffffff; /* Toza oq fon */
+}
+
+/* Section */
+.section {
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.5s ease; /* Silliq kirish animatsiyasi */
+}
+
+/* Elements */
+.elements {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+  border: none; /* Chegarani olib tashlash */
+  border-radius: 10px;
+  background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 100%); /* Nozik ko'k gradient */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.elements:hover {
+  transform: scale(1.02); /* Biroz kattalashish effekti */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.elements p {
+  margin: 0;
+  flex: 1;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #1e3a8a; /* Quyuk ko'k matn */
+  padding: 0.5rem;
+  border-right: 1px solid rgba(0, 0, 0, 0.1); /* Elementlar orasiga nozik chegara */
+}
+
+.elements p:last-child {
+  border-right: none; /* Oxirgi elementda chegara yo'q */
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.action-buttons button {
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.action-buttons .confirm-btn {
+  background: linear-gradient(90deg, #03358b 0%, #343ed3 100%); /* Yashil gradient */
+  color: #ffffff;
+}
+
+.action-buttons .confirm-btn:hover {
+  background: linear-gradient(90deg, #053d96 0%, #1051b9 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.action-buttons .reject-btn {
+  background: linear-gradient(90deg, #ef4444 0%, #f87171 100%); /* Qizil gradient */
+  color: #ffffff;
+}
+
+.action-buttons .reject-btn:hover {
+  background: linear-gradient(90deg, #dc2626 0%, #ef4444 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 1rem;
+  }
+
+  .sidebar h2 {
+    font-size: 1.5rem;
+  }
+
+  .content {
+    padding: 1.5rem;
+  }
+
+  .section {
+    padding: 1rem;
+  }
+
+  .elements {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .elements p {
+    text-align: left;
+    border-right: none; /* Vertikal joylashuvda chegara olib tashlanadi */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Vertikal chegara o'rniga */
+  }
+
+  .elements p:last-child {
+    border-bottom: none;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    padding: 0.75rem;
+  }
+
+  .sidebar ul li button {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  .content {
+    padding: 1rem;
+  }
+
+  .elements p {
+    font-size: 0.9rem;
+  }
+
+  .action-buttons button {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+}
